@@ -1,0 +1,45 @@
+
+<div class="title bg-dark text-white-50 p-2 text-center"><h2>Fais toi peur en calculant ton IMC |:)|</h2></div>
+
+<!--banana in the box-->
+<!--<label>poids en KG (ex. : 70) : </label>
+<input [(ngModel)] = "poids"><br>
+<label>taille en mètre (ex. 1.70) : </label>
+<input [(ngModel)] = "taille"><br>-->
+
+<!--
+<button (click)="onCalculImc()">Calculer l'IMC</button>
+-->
+
+
+<!--
+<h1><strong>L'IMC est {{imc}}</strong></h1>
+-->
+
+<!--
+<h1>l'imc est {{poids}}</h1>
+-->
+<div class="row m-5">
+<div class="col-form-label">
+  <label for="poids" >Poids : </label>
+  <input id="poids" class="form-control"
+    type="number"
+    [(ngModel)]="poids"
+    (ngModelChange)="calcul()"
+    placeholder="poids" />
+
+  <label for="taille">Taille : </label>
+  <input id="taille" class="form-control"
+    type="number"
+    [(ngModel)]="taille"
+    (ngModelChange)="calcul()"
+    placeholder="taille" />
+  <br>
+<div class="bg-success text-white p-4">
+IMC : {{ imc }} {{ qualifier }}
+</div> <br>
+
+</div>
+</div>
+<div class="bg-dark text-white text-center p-5">Copyright &copy; Comme j'aime pas</div>
+
