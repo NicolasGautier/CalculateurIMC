@@ -1,2 +1,2 @@
 # CalculateurIMC
-CalculateurIMC buildt with Angular.
+CalculateurIMC build with Angular.
