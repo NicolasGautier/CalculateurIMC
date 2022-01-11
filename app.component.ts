@@ -48,7 +48,6 @@ export class AppComponent {
     }
 
     //Test de la tranche d'IMC pour affichage du qualifier
-    //TODO : changer les classes : normal : alert-success, maigreur : alert-warning, obésité alert-danger
     if(tranche<18.5){
     this.qualifier = "maigreur";
   } else if (tranche<25){

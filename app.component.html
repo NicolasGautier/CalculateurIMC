@@ -1,5 +1,5 @@
 
-<div class="title bg-dark text-white-50 p-2 text-center"><h2>Fais toi peur en calculant ton IMC |:)|</h2></div>
+<div class="title bg-dark text-white-50 p-2 text-center"><h2>Fais-toi peur en calculant ton IMC |:)|</h2></div>
 
 <!--banana in the box-->
 <!--<label>poids en KG (ex. : 70) : </label>
@@ -20,6 +20,19 @@
 <h1>l'imc est {{poids}}</h1>
 -->
 <div class="row m-5">
+  <div class="col-6">
+
+    <h2>
+      L'indice de masse corporelle. C'est quoi ?
+    </h2>
+    <p>
+      L’indice de masse corporelle ou IMC (en anglais, body mass index ou BMI) est une grandeur qui permet d'estimer la corpulence d’une personne. Inventé au milieu du xixe siècle par Adolphe Quetelet, mathématicien belge et l'un des fondateurs de la statistique moderne, cet indice est appelé aussi l'indice de Quetelet.
+      Il se calcule en fonction de la taille et de la masse corporelle. Il a été conçu, au départ, pour les adultes de 18 à 65 ans, mais de nouveaux diagrammes de croissance ont vu le jour au cours des dernières décennies pour les enfants de 0 à 18 ans. Dans les deux cas, il constitue une indication et intervient dans le calcul de l'indice de masse grasse (IMG).
+   (extrait de Wikipédia)
+    </p>
+  </div>
+
+  <div class="col-6">
 <div class="col-form-label">
   <label for="poids" >Poids : </label>
   <input id="poids" class="form-control"
@@ -35,10 +48,29 @@
     (ngModelChange)="calcul()"
     placeholder="taille" />
   <br>
-<div class="bg-success text-white p-4">
-IMC : {{ imc }} {{ qualifier }}
-</div> <br>
 
+<!--
+  Pas de virgule à la fin du dernier ngClass !!!! On ne duplique pas les classes
+-->
+  <div
+    [ngClass]="{
+    'alert-succes': qualifier == 'normal',
+    'alert-warning': qualifier == 'maigreur',
+    'alert-secondary': qualifier == 'surpoids',
+    'alert-info': qualifier == 'obésité modérée',
+    'alert-primary': qualifier == 'obésité sévère',
+    'alert-danger': qualifier == 'obésité morbide'
+    }"
+    class="alert-success p-4">
+
+    <h4> IMC : {{ imc }} </h4> <br>
+
+      {{ qualifier }}
+
+    </div>
+  <br>
+
+</div>
 </div>
 </div>
 <div class="bg-dark text-white text-center p-5">Copyright &copy; Comme j'aime pas</div>
